@@ -4,7 +4,7 @@ build/
 bin/
 derby.log
 !gradle/wrapper/gradle-wrapper.jar
-learnright/
+/learnright
 
 ### STS ###
 .apt_generated
