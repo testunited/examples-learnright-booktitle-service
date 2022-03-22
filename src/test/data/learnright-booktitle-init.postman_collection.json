@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "e049b9b1-2a44-4a3f-bcbb-854e65c0bfb9",
+		"name": "learnright-booktitle-init",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "booktitle-1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"1\",\n\t\"name\":\"Sams Teach Yourself Java in 21 Days\", \n\t\"author\": \"Rogers Cadenhead\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8001/booktitles",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"booktitles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booktitle-2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"1\",\n\t\"name\":\"Sams Teach Yourself Java in 21 Days\", \n\t\"author\": \"Rogers Cadenhead\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8001/booktitles",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"booktitles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booktitle-3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"3\",\n\t\"name\":\"Mastering Spring Boot 2.0: Build modern, cloud-native, and distributed systems using Spring Boot\", \n\t\"author\": \"Dinesh Rajput\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8001/booktitles",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"booktitles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
