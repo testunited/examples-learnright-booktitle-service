@@ -73,11 +73,11 @@ dependencies {
     }	    
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.8.2'
-	testRuntimeOnly 'org.testunited:testunited-api:0.0.3'
+	testRuntimeOnly 'org.testunited:testunited-sdk:0.0.3'
 }
 
 contracts {
-	packageWithBaseClasses "org.testunited.examples.learnright.booktitle.test.contract"
+	packageWithBaseClasses "org.testunited.examples.learnright.booktitle"
 	testFramework = org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5
 
 }
@@ -91,13 +91,11 @@ publishing {
 }
 jacoco {
     toolVersion = "0.8.7"
-    reportsDir = file("$buildDir/jacoco")
+    reportsDirectory = file("$buildDir/jacoco")
 }
 
 jacocoTestReport {
     reports {
-        xml.enabled false
-        csv.enabled false
         html.destination file("${buildDir}/jacocoHtml")
     }
 }
@@ -106,11 +104,11 @@ docker {
     name "testunited/examples-learnright-booktitle:latest"
     files jar.archivePath
     copySpec.from("build/libs").into(".")
-    buildArgs(['JAR_FILE': "${bootJar.baseName}-${bootJar.version}.jar"])
+    buildArgs(['JAR_FILE': "${bootJar.archiveFileName.get()}"])
 }
 dockerPrepare{
     duplicatesStrategy = 'exclude'
-
+    dependsOn = [bootJar, jar, verifierStubsJar]
 }
 test {
     useJUnitPlatform()
@@ -119,7 +117,7 @@ test {
 
 task runJar(group: "Run", description: "Runs the Jar built by the 'build' task", type: JavaExec) {
     dependsOn = [build, test]
-    main = "-jar";
+    mainClass = "-jar";
     args jar.archivePath
 }
 

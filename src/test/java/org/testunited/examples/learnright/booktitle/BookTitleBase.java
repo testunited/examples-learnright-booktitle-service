@@ -1,4 +1,4 @@
-package org.testunited.examples.learnright.booktitle.test.contract;
+package org.testunited.examples.learnright.booktitle;
 
 import static org.mockito.Mockito.when;
 
